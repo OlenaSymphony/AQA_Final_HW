@@ -28,6 +28,8 @@ describe('User', () => {
     itemsInCart = inventoryPage.addItemToShoppingCart(cypresConfig.inventory_item_name, itemsInCart)
     inventoryPage.checkAddedItemInCart()
     inventoryPage.orderItemFromCart()
+
+    
   })
 })
 
