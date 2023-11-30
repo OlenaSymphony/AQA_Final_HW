@@ -3,7 +3,8 @@ name: CI
 
 on:
   push:
-    branches: [ cypress_test ]
+    branches: 
+    - cypress_test
 
 jobs:
   tests:
