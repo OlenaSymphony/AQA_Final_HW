@@ -22,10 +22,10 @@ Clone the repository:
 ## Running tests
 
 To run the Cypress tests, use the following command:
-    
+
     ```bash
-    npx cypress open --config-file "cypress.config.js"
-    ```
+   npx cypress open --config-file "cypress.config.js"
+   ```
 
 ## License
 
