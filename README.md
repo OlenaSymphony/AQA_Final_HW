@@ -12,12 +12,12 @@ Clone the repository:
 
 ```sh
 $ git clone git clone https://github.com/OlenaSymphony/Final_assignment_AQA.git
-$ npm intall cypress
+$ npm install cypress --save-dev
 ```
 
 ## Running tests
 
-To run the Cypress tests, use the following command:
+To run the Cypress tests in the GUI mode, use the following command:
 
 ```sh
 npx cypress open --config-file "cypress.config.js"
