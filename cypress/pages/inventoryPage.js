@@ -53,7 +53,7 @@ export default class InventoryPage {
         cy.get('.summary_tax_label')
             .should('have.text', `Tax: $${cypresConfig.tax_price}`)
 
-        let total_sum = parseFloat(cypresConfig.inventory_item_price) + parseFloat(cypresConfig.tax_price)
+        let total_sum = (parseFloat(cypresConfig.inventory_item_price) + parseFloat(cypresConfig.tax_price)).toFixed(2)
         cy.get('.summary_total_label')
             .should('have.text', `Total: $${total_sum}`)
 
