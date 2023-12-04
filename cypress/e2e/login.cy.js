@@ -5,8 +5,8 @@ import CommonPage from "../pages/commonPage"
 
 const loginPage = new LoginPage()
 const commonPage = new CommonPage()
-const logoutBtn = '#logout_sidebar_link'
 const cypresConfig = Cypress.config()
+const inventoryPageUrl = cypresConfig.baseUrl + '/inventory.html'
 
 describe('User', () => {
   beforeEach(() => {
@@ -16,10 +16,10 @@ describe('User', () => {
   it('should be able to login with valid credentials', () => {
     loginPage.loginUser(cypresConfig.standard_username, cypresConfig.user_password)
 
-    cy.url().should('eq', cypresConfig.baseUrl + '/inventory.html')
+    cy.url().should('eq', inventoryPageUrl)
 
     commonPage.openBurgerMenu()
-    cy.get(logoutBtn)
+    cy.get(loginPage.logoutBtn)
       .should('be.visible')
       .should('have.text', 'Logout')
 
@@ -28,10 +28,10 @@ describe('User', () => {
   it('should be able to logout', () => {
     loginPage.loginUser(cypresConfig.standard_username, cypresConfig.user_password)
 
-    cy.url().should('eq', cypresConfig.baseUrl + '/inventory.html')
+    cy.url().should('eq', inventoryPageUrl)
 
     commonPage.openBurgerMenu()
-    cy.get(logoutBtn).click()
+    cy.get(loginPage.logoutBtn).click()
     cy.url().should('eq', cypresConfig.baseUrl + '/index.html')
 
   })
@@ -49,11 +49,11 @@ describe('User', () => {
   it('should be able to login with performance glitch credentials', () => {
     loginPage.loginUser(cypresConfig.performance_glitch_username, cypresConfig.user_password)
 
-    cy.url().should('eq', cypresConfig.baseUrl + '/inventory.html')
+    cy.url().should('eq', inventoryPageUrl)
 
     commonPage.openBurgerMenu()
 
-    cy.get(logoutBtn)
+    cy.get(loginPage.logoutBtn)
       .should('be.visible')
       .should('have.text', 'Logout')
   })
@@ -62,10 +62,10 @@ describe('User', () => {
     cy.viewport(800, 600)
     loginPage.loginUser(cypresConfig.standard_username, cypresConfig.user_password)
 
-    cy.url().should('eq', cypresConfig.baseUrl + '/inventory.html')
+    cy.url().should('eq', inventoryPageUrl)
 
     commonPage.openBurgerMenu()
-    cy.get(logoutBtn)
+    cy.get(loginPage.logoutBtn)
       .should('be.visible')
       .should('have.text', 'Logout')
   })

@@ -1,5 +1,7 @@
 export default class LoginPage {
-    constructor() { }
+    constructor() {
+        this.logoutBtn = '#logout_sidebar_link'
+     }
 
     userName() {
         return cy.get('#user-name')
