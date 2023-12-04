@@ -27,23 +27,34 @@ export default class InventoryPage {
             .should('be.visible')
             .should('not.be.disabled')
     }
-    orderItemFromCart() {
+    
+    typeFirstName(){
         let firstName = 'Olena'
-        let lastname = 'Gofman'
-        let postcode = '90210'
-
-        cy.get('.checkout_button').click()
         cy.get('#first-name')
             .type(firstName)
             .should('have.value', firstName)
-
+    }
+    
+    typeLasttName(){
+        let lastname = 'Gofman'
         cy.get('#last-name')
             .type(lastname)
             .should('have.value', lastname)
+    }
 
+    typePostalCode(){
+        let postalCode = '90210'
         cy.get('#postal-code')
-            .type(postcode)
-            .should('have.value', postcode)
+            .type(postalCode)
+            .should('have.value', postalCode)
+    }
+
+    orderItemFromCart() {
+        cy.get('.checkout_button').click()
+
+        this.typeFirstName()
+        this.typeLasttName()
+        this.typePostalCode()
 
         cy.get('.btn_primary').click()
 
