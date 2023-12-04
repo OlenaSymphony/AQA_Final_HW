@@ -1,7 +1,6 @@
 /// <reference types="cypress" />
 
 import LoginPage from "../pages/loginPage"
-//import InventoryPage from "../pages/inventoryPage"
 import CommonPage from "../pages/commonPage"
 
 const loginPage = new LoginPage()
