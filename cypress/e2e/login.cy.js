@@ -19,7 +19,7 @@ describe('User', () => {
     cy.url().should('eq', inventoryPageUrl)
 
     commonPage.openBurgerMenu()
-    cy.get(loginPage.logoutBtn)
+    cy.get(commonPage.logoutBtn)
       .should('be.visible')
       .should('have.text', 'Logout')
 
@@ -30,8 +30,7 @@ describe('User', () => {
 
     cy.url().should('eq', inventoryPageUrl)
 
-    commonPage.openBurgerMenu()
-    cy.get(loginPage.logoutBtn).click()
+    commonPage.logout()
     cy.url().should('eq', cypresConfig.baseUrl + '/index.html')
 
   })
@@ -53,7 +52,7 @@ describe('User', () => {
 
     commonPage.openBurgerMenu()
 
-    cy.get(loginPage.logoutBtn)
+    cy.get(commonPage.logoutBtn)
       .should('be.visible')
       .should('have.text', 'Logout')
   })
@@ -65,7 +64,7 @@ describe('User', () => {
     cy.url().should('eq', inventoryPageUrl)
 
     commonPage.openBurgerMenu()
-    cy.get(loginPage.logoutBtn)
+    cy.get(commonPage.logoutBtn)
       .should('be.visible')
       .should('have.text', 'Logout')
   })
