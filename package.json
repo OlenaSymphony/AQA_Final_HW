@@ -1,0 +1,13 @@
+{
+    "name": "cypress-saucedemo-test",
+    "version": "1.0.0",
+    "description": "This repo contains various tests for testing SauceDemo Web Site using Cypress.",
+    "scripts": {
+      "test": "npx cypress run --config-file 'cypress.config.js'"
+    },
+    "author": "Mickey Mouse",
+    "license": "ISC",
+    "dependencies": {
+      "cypress": "13.6.0"
+    }
+  }
